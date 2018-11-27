@@ -19,7 +19,7 @@ def people():
 
 @app.route('/')
 def index():
-    return "<span style='color:red'>I am app 2</span>"
+    return "<span style='color:red'>I am app 3</span>"
 
 
 @app.route('/fileList/', methods=['POST'])
