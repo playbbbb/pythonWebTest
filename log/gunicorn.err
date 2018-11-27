@@ -1,0 +1,53 @@
+
+Error: 'gunicorn.py' doesn't exist
+[2018-11-27 10:48:15 +0800] [2903] [INFO] Starting gunicorn 19.9.0
+[2018-11-27 10:48:15 +0800] [2903] [INFO] Listening at: http://0.0.0.0:8000 (2903)
+[2018-11-27 10:48:15 +0800] [2903] [INFO] Using worker: gevent
+[2018-11-27 10:48:15 +0800] [2906] [INFO] Booting worker with pid: 2906
+[2018-11-27 10:48:15 +0800] [2907] [INFO] Booting worker with pid: 2907
+[2018-11-27 10:48:15 +0800] [2908] [INFO] Booting worker with pid: 2908
+[2018-11-27 10:50:56 +0800] [3140] [INFO] Starting gunicorn 19.9.0
+[2018-11-27 10:50:56 +0800] [3140] [INFO] Listening at: http://0.0.0.0:8000 (3140)
+[2018-11-27 10:50:56 +0800] [3140] [INFO] Using worker: gevent
+[2018-11-27 10:50:56 +0800] [3143] [INFO] Booting worker with pid: 3143
+[2018-11-27 10:50:56 +0800] [3144] [INFO] Booting worker with pid: 3144
+[2018-11-27 10:50:56 +0800] [3145] [INFO] Booting worker with pid: 3145
+[2018-11-27 11:05:19 +0800] [3145] [ERROR] Error handling request /people/?name=3242432
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/gunicorn/workers/base_async.py", line 56, in handle
+    self.handle_request(listener_name, req, client, addr)
+  File "/usr/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 160, in handle_request
+    addr)
+  File "/usr/lib/python3.6/site-packages/gunicorn/workers/base_async.py", line 107, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python3.6/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python3.6/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python3.6/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/lib64/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/usr/lib64/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/work/flask/test/test3.py", line 16, in people
+    user_agent = request.header.get('User-Agent')
+  File "/usr/lib/python3.6/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'Request' object has no attribute 'header'
+[2018-11-27 11:07:07 +0800] [4533] [INFO] Starting gunicorn 19.9.0
+[2018-11-27 11:07:07 +0800] [4533] [INFO] Listening at: http://0.0.0.0:8000 (4533)
+[2018-11-27 11:07:07 +0800] [4533] [INFO] Using worker: gevent
+[2018-11-27 11:07:07 +0800] [4536] [INFO] Booting worker with pid: 4536
+[2018-11-27 11:07:07 +0800] [4537] [INFO] Booting worker with pid: 4537
+[2018-11-27 11:07:07 +0800] [4538] [INFO] Booting worker with pid: 4538
