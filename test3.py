@@ -1,6 +1,6 @@
 # coding=utf-8
 import click
-from flask import Flask, request, abort, redirect, url_for, make_response, render_template
+from flask import Flask, request, abort, redirect, url_for, make_response, render_template, jsonify
 from flask.views import View
 
 app = Flask(__name__)
@@ -40,6 +40,17 @@ def login():
 def secret():
     abort(401)
     print('This is never executed')
+
+
+@app.route('/')
+def default_route():
+    """Default route"""
+    app.logger.debug('this is a     DEBUG    message')
+    app.logger.info('this is an    INFO    message')
+    app.logger.warning('this is a    WARNING    message')
+    app.logger.error('this is an    ERROR    message')
+    app.logger.critical('this is a    CRITICAL    message')
+    return jsonify('hello    world')
 
 
 @app.errorhandler(404)
