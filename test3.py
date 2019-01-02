@@ -26,7 +26,7 @@ def index():
 
 @app.route('/fileList/', methods=['GET', 'POST'])
 def get_file_list():
-    path = "E:/Projects/"  # 文件夹目录
+    path = "static/"  # 文件夹目录
     files = os.listdir(path)
     # print(files,type (files),files.__str__())
     print(type(files), files.__str__())
