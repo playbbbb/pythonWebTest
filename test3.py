@@ -1,4 +1,6 @@
 # coding=utf-8
+import os
+
 import click
 from flask import Flask, request, abort, redirect, url_for, make_response, render_template, jsonify
 from flask.views import View
@@ -22,9 +24,15 @@ def index():
     return "<span style='color:red'>I am app 3</span>"
 
 
-@app.route('/fileList/', methods=['POST'])
+@app.route('/fileList/', methods=['GET', 'POST'])
 def get_file_list():
-    return ""
+    path = "E:/Projects/"  # 文件夹目录
+    files = os.listdir(path)
+    # print(files,type (files),files.__str__())
+    print(type(files), files.__str__())
+    for val in files:
+        print(type(val))
+    return jsonify(files.__str__())
 
 
 @app.route('/login/', methods=['GET', 'POST'])
