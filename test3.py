@@ -30,9 +30,13 @@ def get_file_list():
     files = os.listdir(path)
     # print(files,type (files),files.__str__())
     print(type(files), files.__str__())
+
+    item = {}
     for val in files:
-        print(type(val))
-    return jsonify(files.__str__())
+        item['name'] = val
+
+    data = {'SUCCESS': 'SUCCESS', 'data': item}
+    return jsonify(data)
 
 
 @app.route('/login/', methods=['GET', 'POST'])
