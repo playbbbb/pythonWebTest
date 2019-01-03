@@ -30,12 +30,12 @@ def get_file_list():
     files = os.listdir(path)
     # print(files,type (files),files.__str__())
     print(type(files), files.__str__())
-
-    item = {}
+    items = []
     for val in files:
-        item['name'] = val
+        item = {'name': val}
+        items.append(item)
 
-    data = {'SUCCESS': 'SUCCESS', 'data': item}
+    data = {'SUCCESS': 'SUCCESS', 'data': items}
     return jsonify(data)
 
 
